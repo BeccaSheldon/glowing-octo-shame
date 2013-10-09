@@ -24,14 +24,14 @@ ActiveRecord::Schema.define(version: 20131009154215) do
 
   create_table "roles", force: true do |t|
     t.string   "character"
-    t.integer  "movie_id_id"
-    t.integer  "star_id_id"
+    t.integer  "movie_id"
+    t.integer  "star_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "roles", ["movie_id_id"], name: "index_roles_on_movie_id_id"
-  add_index "roles", ["star_id_id"], name: "index_roles_on_star_id_id"
+  add_index "roles", ["movie_id"], name: "index_roles_on_movie_id"
+  add_index "roles", ["star_id"], name: "index_roles_on_star_id"
 
   create_table "showtimes", force: true do |t|
     t.string   "location"
