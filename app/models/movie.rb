@@ -10,4 +10,13 @@ class Movie < ActiveRecord::Base
   def snippet
     description.to_s.truncate 50
   end
+
+  def audience_rating
+    #RottenMovie.find(ratings: RottenMovie.find(audience_score))
+    if rotten_finder
+      rotten_finder.ratings.audience_score
+    else
+      nil
+    end
+  end
 end
